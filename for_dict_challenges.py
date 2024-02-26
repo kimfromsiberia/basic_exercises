@@ -12,8 +12,16 @@ students = [
     {'first_name': 'Маша'},
     {'first_name': 'Петя'},
 ]
+names = dict()
+for student in students:
+    if student['first_name'] not in names:
+        names[student['first_name']] = 1
+    else:
+        names[student['first_name']] += 1
+for name, num in names.items():
+    print(f'{name}: {num}')
 # ???
-
+    
 
 # Задание 2
 # Дан список учеников, нужно вывести самое часто повторящееся имя
@@ -26,6 +34,21 @@ students = [
     {'first_name': 'Маша'},
     {'first_name': 'Оля'},
 ]
+names = dict()
+for student in students:
+    if student['first_name'] not in names:
+        names[student['first_name']] = 1
+    else:
+        names[student['first_name']] += 1
+
+result_name = list(names.keys())[0]
+num_of_names = names.pop(result_name)
+
+for name, num in names.items():
+    if num > num_of_names:
+        result_name = name
+        num_of_names = num
+print(result_name)
 # ???
 
 
@@ -51,8 +74,26 @@ school_students = [
         {'first_name': 'Саша'},
     ],
 ]
-# ???
+class_number = 1
+for group in school_students:
+    names = dict()
+    for student in group:
+        if student['first_name'] not in names:
+            names[student['first_name']] = 1
+        else:
+            names[student['first_name']] += 1
 
+    result_name = list(names.keys())[0]
+    num_of_names = names.pop(result_name)
+
+    for name, num in names.items():
+        if num > num_of_names:
+            result_name = name
+            num_of_names = num
+    print(f'Самое частое имя в классе {class_number}: {result_name}')
+    class_number += 1
+# ???
+print()
 
 # Задание 4
 # Для каждого класса нужно вывести количество девочек и мальчиков в нём.
