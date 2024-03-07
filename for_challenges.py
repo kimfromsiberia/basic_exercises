@@ -30,10 +30,8 @@ is_male = {
 }
 names = ['Оля', 'Петя', 'Вася', 'Маша']
 for name in names:
-    if is_male[name]:
-        print(f'{name} мужской')
-    else:
-        print(f'{name} женский')
+    gender = 'мужской' if is_male[name] else 'женский'
+    print(f'{name} {gender}')
 # ???
 
 
@@ -51,9 +49,8 @@ groups = [
 ]
 print(f'Всего {len(groups)} группы')
 group_number = 1
-for group in groups:
+for group_number, group in enumerate(groups, start=1):
     print(f'Группа {group_number}: {len(group)} человека.')
-    group_number += 1
 # ???
 
 

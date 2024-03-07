@@ -33,13 +33,12 @@ messages = [
 import random
 import uuid
 import datetime
-import pprint
 
 import lorem
 
 
 def generate_chat_history():
-    messages_amount = random.randint(10, 20)
+    messages_amount = random.randint(200, 1000)
     users_ids = list(
         {random.randint(1, 10000) for _ in range(random.randint(5, 20))}
     )
@@ -69,7 +68,6 @@ def generate_chat_history():
 
 if __name__ == "__main__":
     messages = generate_chat_history()
-    #  pprint.pprint(messages)
 
 # Вывести айди пользователя, который написал больше всех сообщений.
 

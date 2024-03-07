@@ -14,10 +14,7 @@ students = [
 ]
 names = dict()
 for student in students:
-    if student['first_name'] not in names:
-        names[student['first_name']] = 1
-    else:
-        names[student['first_name']] += 1
+    names[student['first_name']] = names.get(student['first_name'], 0) + 1
 for name, num in names.items():
     print(f'{name}: {num}')
 # ???
